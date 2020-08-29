@@ -1,18 +1,22 @@
-// <p id="foundUsers">paragraph</p>
-
 // const input = document.getElementById('inputUser').value; 
 // const user = 'anthonygilbertt'
 
-function populateTable() {
-
-
-}
+// function populateTable() {
+//     document.getElementById('useravatar').innerHTML = JSON.stringify(response.avatar_url);
+//     document.getElementById('username').innerHTML = JSON.stringify(response.name);
+//     document.getElementById('userbio').innerHTML = JSON.stringify(response.bio);
+//     document.getElementById('userfollowers').innerHTML = JSON.stringify(response.followers);
+//     document.getElementById('userfollowing').innerHTML = JSON.stringify(response.following);
+//     document.getElementById('usertwitter').innerHTML = JSON.stringify(response.twitter_username);
+//     document.getElementById('usergithub').innerHTML = JSON.stringify(response.url);
+// }
 
 
 function clickButton() {
     const api = 'https://api.github.com/users/';
     const inputValue = document.querySelector('#inputUser').value;
     const apiUser = api + inputValue;
+
 
         const display = document.querySelector('#foundUsers');
         display.innerHTML = inputValue;
@@ -25,21 +29,21 @@ function clickButton() {
         }).then(response => {
             console.log(response);
             document.getElementById('foundUsers').innerHTML = JSON.stringify(response);
-            
+            document.getElementById('useravatar').src = response.avatar_url;
+            document.getElementById('useravatar').setAttribute("width", 100);
+            document.getElementById('useravatar').setAttribute("height", 100);
+            document.getElementById('username').innerHTML = response.name;
+            document.getElementById('userbio').innerHTML = response.bio;
+            document.getElementById('userfollowers').innerHTML = JSON.stringify(response.followers);
+            document.getElementById('userfollowing').innerHTML = JSON.stringify(response.following);
+            document.getElementById('usertwitter').innerHTML = response.twitter_username;
+            document.getElementById('usergithub').innerHTML = response.html_url;
+            document.getElementById('usergithub').href = response.html_url;
+
         });
 
 
 }
-
-
-
-
-
-// function fetchResponse() {
-    
-
-// }
-
 
 
 
@@ -104,13 +108,83 @@ function clickButton() {
 
 
 /* ---  Display Results for the Table ---    */
- $(document).ready( function () {
-     $('#results_table').DataTable();
- });
 
 
 
+    //  $(document).ready(function () {
+    //     //Pagination numbers
+    //     $('#results_table').DataTable({
+    //       "pagingType": "numbers",
+    //       "columns": [
+    //           { ' data': 'avatar_url' },  //avatar image
+    //           { ' data': 'name' }, //name
+    //           { ' data': 'bio' },  //description/bio
+    //           { ' data': 'followers' }, //followers
+    //           { ' data': 'following' }, //following
+    //           { ' data': 'twitter_username' }, //twitter username
+    //           { ' data': 'url' }, //link to profile
 
+    //       ]
+
+
+    //     });
+    //   });
+
+// TRY NUMBER 1
+    // $(document).ready(function (apiUser) {
+    //     //Pagination numbers
+    //     $('#results_table').DataTable({
+    //         'ajax': {
+    //             'url': "https://api.github.com/users/wesbos",
+    //             'dataSet': 'data'
+    //         },
+    //         'columns': [ 
+    //             { 'data': 'avatar_url' },
+    //             { 'data': 'name' },
+    //             { 'data': 'bio' },
+    //             { 'data': 'followers' },
+    //             { 'data': 'following' },
+    //             { 'data': 'twitter_username' },
+    //             { 'data': 'url' }           
+    //         ]
+    //     })
+    // });
+        
+      
+    //TRY NUMBER 2
+    // $(document).ready(function () {
+    //     const api = 'https://api.github.com/users/';
+    //     const inputValue = document.querySelector('#inputUser').value;
+    //     const apiUser = api + inputValue;
+
+    //     $('#results_table').DataTable({
+    //         'ajax': {
+    //             'url': apiUser,
+    //             'data': 'dataSet'
+    //         },
+    //         'columns': [ 
+    //             { 'data': 'avatar_url' },
+    //             { 'data': 'name' },
+    //             { 'data': 'bio' },
+    //             { 'data': 'followers' },
+    //             { 'data': 'following' },
+    //             { 'data': 'twitter_username' },
+    //             { 'data': 'url' }
+    //         ]
+    //     })
+    // });
+        
+//TRY NUMBER 3
+    $(document).ready(function () {
+        const api = 'https://api.github.com/users/';
+        const inputValue = document.querySelector('#inputUser').value;
+        const apiUser = api + inputValue;
+
+        $('#results_table').DataTable({
+
+
+        })
+    });
 
 
 //DATA I SHOULD SEE//
@@ -124,8 +198,6 @@ function clickButton() {
 //  twitter username      ->   twitter_username
 //  company               ->   company
 
-const adminBoolean = "site_admin";
-const userID = "id";
 
 //"avatar_url": "https://avatars1.githubusercontent.com/u/57936?v=4",
 //"url": "https://api.github.com/users/example",
@@ -145,19 +217,3 @@ const userID = "id";
 
 
 
-
-//-----------....................---------------------
-
-// catchText().then(response => {
-//     console.log('yaay!!');
-// }).catch(error => {
-//     console.log('error!');
-//     console.log(error);
-// });
-
-// async function catchText() {
-//     const response = await fetch('notes.txt');
-//     const textResonse = await response.text();
-//     document.getElementById('textFile').textContent = textResonse;          
-            
-// }
