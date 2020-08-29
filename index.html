@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <title> Github Search App by Anthony Gilbert</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-center">
+    <form id="userForm">
+
+      <h1 class="h3 mb-3 font-weight-normal">Search 4 A GitHub User</h1>
+      <input type="text" id="inputUser" class="form-control"  name="username" value="" placeholder="User Name" required autofocus>
+      <br>
+      <button class="btn btn-lg btn-primary btn-block" type="button" id="searchUser" onclick="clickButton()">Search</button>
+      
+    </form><br>
+    <div>
+        <p>Found Users</p>
+        <p id="foundUsers"></p>
+    </div>
+
+    <table id="results_table" class="table">
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>bio</th>
+            <th>twitter</th>
+            <th>more info</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Colt Adams</td>
+            <td>16740326 5320</td>
+        </tr>
+        <tr>
+            <td>mr cool</td>
+            <td>Ivan Guzman</td>
+            <td>16690719 5330</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Elijah Christian</td>
+            <td>16231202 4728</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Vladimir Barrera</td>
+            <td>16730519 2572</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Hector Campos</td>
+            <td>16821016 9515</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Axel Deleon</td>
+            <td>16030604 5196</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Wyatt Mcdonald</td>
+            <td>16020425 8289</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Nolan Larsen</td>
+            <td>16250607 8530</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Thaddeus Leon</td>
+            <td>16111219 4343</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Odysseus Levine</td>
+            <td>16151004 8943</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Oscar Huffman</td>
+            <td>16860328 2628</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Kennedy Todd</td>
+            <td>16120819 3399</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Cyrus Erickson</td>
+            <td>16210127 7537</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Vaughan Mack</td>
+            <td>16281009 7002</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Jamal Gomez</td>
+            <td>16710207 1292</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Dennis Burns</td>
+            <td>16770501 7585</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>Marvin Sargent</td>
+            <td>16251106 5001</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>Elijah Clay</td>
+            <td>16960329 4548</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>Gannon Holder</td>
+            <td>16081106 1498</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>Dustin Olsen</td>
+            <td>16130603 9015</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Dustin Olsen</td>
+            <td>16130603 9015</td>
+        </tr>
+        </tbody>
+        </table>
+        <p class="mt-5 mb-3 text-muted">by Anthony Gilbert</p>
+  </body>
+</html>
