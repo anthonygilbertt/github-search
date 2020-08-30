@@ -25,22 +25,14 @@ function clickButton() {
 
     table.clear().draw();
 
-    fetch(apiUser, {
-        headers: {
-            authorization: 'token 43624b34b9eb825d41c0aed9ef496933f819849a'
-        }
-    }).then(response => {
+    fetch(apiUser).then(response => {
 
         return response.json();
     }).then(response => {
 
         for (var userIdx in response.items) {
             const userEP = 'https://api.github.com/users/';
-            fetch(userEP + response.items[userIdx].login, {
-                headers: {
-                    authorization: 'token 43624b34b9eb825d41c0aed9ef496933f819849a'
-                }
-            })
+            fetch(userEP + response.items[userIdx].login)
                 .then(function (response) {
 
                     return response.json();
