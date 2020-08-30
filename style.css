@@ -8,3 +8,13 @@ td {
 tr {
     color: turquoise;
 }
+
+
+.useravatar {
+    width: 100px;
+    height: 100px;
+}
+
+h3 {
+    text-decoration: underline;
+}
